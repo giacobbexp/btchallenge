@@ -1,0 +1,20 @@
+.bt-header {
+    background: #5514b4;
+    color: #fff;
+    height: 80px;
+}
+
+.bt-header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.bt-header a:hover {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 12px;
+}
+
+.bt-logo {
+    max-height: 46px;
+    max-width: 46px;
+}

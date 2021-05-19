@@ -1,9 +1,13 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
-function App() {
+import { Header, Footer } from './Components/Core';
+
+const App = () => {
   return (
     <div className="App">
-
+      <Header />
+      <Footer />
     </div>
   );
 }

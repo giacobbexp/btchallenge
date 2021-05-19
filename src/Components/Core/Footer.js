@@ -14,8 +14,8 @@ const Footer = () => {
             <div className="container text-center">
                 <div className="row">
                     <div className="col">
-                        Footer
-                </div>
+                        <p>BT React Code Test - by Jake Malkin - 19/05/2021</p>
+                    </div>
                 </div>
             </div>
         </footer>

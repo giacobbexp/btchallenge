@@ -17,3 +17,7 @@ body {
   color: #fff;
   background: #2e0d5f;
 }
+
+.article a {
+  text-decoration: none;
+}

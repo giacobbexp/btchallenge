@@ -1,17 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Article } from './';
 
 const Search = () => {
     const [search, setSearch] = useState('');
     const [articles, setArticles] = useState('');
+    const [limit, setLimit] = useState(10);
+
+    let articleId = 0;
+
+    useEffect(() => {
+        formSubmit();
+    }, [limit]);
 
     const onSearch = (e) => {
         setSearch(e.target.value);
     }
 
     const formSubmit = (e) => {
-        e.preventDefault();
+        if (e) e.preventDefault();
         if (search) {
-            fetch(`https://newsapi.org/v2/everything?q=${search}&sortBy=popularity&apiKey=88a8ac67f5674ce2b8fe3ab8dce2b1d5&pageSize=10`)
+            fetch(`https://newsapi.org/v2/everything?q=${search}&sortBy=popularity&apiKey=88a8ac67f5674ce2b8fe3ab8dce2b1d5&pageSize=${limit}`)
                 .then(response => response.json())
                 .then(data => setArticles(data.articles));
         }
@@ -19,7 +27,7 @@ const Search = () => {
 
     return (
         <>
-            <div className="row mt-5">
+            <div className="row my-5">
                 <div className="col-sm-6 offset-sm-3">
                     <form onSubmit={formSubmit}>
                         <div className="input-group mb-3">
@@ -31,13 +39,15 @@ const Search = () => {
             </div>
 
             {articles &&
-                articles.map((article) => {
+            <>
+                {articles.map((article) => {
+                    articleId++;
                     return (
-                        <div>
-                            {article.author}
-                        </div>
+                        <Article content={article} key={articleId} />
                     );
-                })
+                })}
+                <p className="text-center"><button className="btn btn-bt" onClick={() => setLimit(limit + 10)}>Show more</button></p>
+            </>
             }
         </>
     )

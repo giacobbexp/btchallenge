@@ -6,12 +6,12 @@ import { Search } from './Components/News';
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App d-flex flex-column min-vh-100">
       <Header />
-      <div className="container mt-5 p-5 section-main">
+      <div className="container my-5 p-5 section-main">
         <div className="row">
           <div className="col">
-            <h1>BT React Code Test - by Jake Malkin - 19/05/2021</h1>
+            <h1 className="text-center">BT React Code Test - by Jake Malkin - 19/05/2021</h1>
             <Search />
           </div>
         </div>

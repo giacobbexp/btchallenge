@@ -1,4 +1,19 @@
 body {
   font-family: Calibri, sans-serif;
   color: #333;
+  background: #e5e5e5;
+}
+
+.section-main {
+  background: #fff;
+}
+
+.btn-bt {
+  background: #5514b4;
+  color: #fff;
+}
+
+.btn-bt:hover { 
+  color: #fff;
+  background: #2e0d5f;
 }
